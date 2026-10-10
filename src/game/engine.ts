@@ -4,7 +4,7 @@ const shuffle = <T,>(a: T[]) => {
   const b = [...a];
   for (let i = b.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [b[i], b[j]] = [b[j], b[i]];
+    [b[i], b[j]] = [b[j]!, b[i]!];
   }
   return b;
 };
@@ -25,15 +25,15 @@ export function pickNext(current: Coin, unused: Coin[], score: number): Coin | n
   if (good.length) {
     // prefer the closest one above the target so difficulty ramps
     good.sort((a, b) => ratio(a.cap, current.cap) - ratio(b.cap, current.cap));
-    return good[Math.floor(Math.random() * Math.min(3, good.length))];
+    return good[Math.floor(Math.random() * Math.min(3, good.length))] ?? null;
   }
-  return candidates[0];
+  return candidates[0] ?? null;
 }
 
 export function startPair(pool: Coin[]): [Coin, Coin, Coin[]] | null {
   if (pool.length < 2) return null;
   const s = shuffle(pool);
-  const first = s[0];
+  const first = s[0]!;
   const rest = s.slice(1);
   const second = pickNext(first, rest, 0);
   if (!second) return null;
