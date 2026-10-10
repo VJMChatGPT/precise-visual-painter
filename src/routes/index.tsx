@@ -54,7 +54,7 @@ function App() {
     <main className="relative h-[100dvh] overflow-hidden">
       <Backdrop floating={screen !== "play"} />
       {screen === "home" && <Home pool={pool} setPool={(p) => { setPool(p); setPrefs(mode, p); }} onStart={start} />}
-      {screen === "play" && <Game key={Date.now()} mode={mode} pool={pool} onEnd={end} onQuit={() => setScreen("home")} />}
+      {screen === "play" && <Game mode={mode} pool={pool} onEnd={end} onQuit={() => setScreen("home")} />}
       {screen === "over" && (
         <GameOver mode={mode} pool={pool} {...final} onAgain={() => setScreen("play")} onMenu={() => setScreen("home")} />
       )}
