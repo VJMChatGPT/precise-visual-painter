@@ -8,4 +8,5 @@ export const RANKS: Rank[] = [
   { id: "exit", name: "Exit Liquidity", emoji: "💀", min: 0 },
 ];
 
-export const rankFor = (score: number): Rank => RANKS.find((r) => score >= r.min) ?? RANKS[RANKS.length - 1]!;
+export const rankFor = (score: number): Rank =>
+  RANKS.find((r) => score >= r.min) ?? RANKS[RANKS.length - 1]!;

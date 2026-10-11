@@ -12,16 +12,31 @@ const columns = Array.from({ length: COLS }, (_, i) => {
 
 export function Backdrop({ floating = true }: { floating?: boolean }) {
   return (
-    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-background">
+    <div
+      aria-hidden
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-background"
+    >
       <div className="absolute inset-[-10%] flex -rotate-6 justify-center gap-4 sm:gap-6">
         {columns.map((col, i) => (
           <div
             key={i}
-            className={i % 2 ? "flex animate-scroll-down flex-col gap-4 sm:gap-6" : "flex animate-scroll-up flex-col gap-4 sm:gap-6"}
-            style={{ animationDuration: `${60 + i * 7}s`, animationPlayState: floating ? "running" : "paused" }}
+            className={
+              i % 2
+                ? "flex animate-scroll-down flex-col gap-4 sm:gap-6"
+                : "flex animate-scroll-up flex-col gap-4 sm:gap-6"
+            }
+            style={{
+              animationDuration: `${60 + i * 7}s`,
+              animationPlayState: floating ? "running" : "paused",
+            }}
           >
             {col.map((c, j) => (
-              <CoinImage key={j} coin={c} className="h-20 w-20 shrink-0 grayscale-[35%] sm:h-32 sm:w-32" />
+              <CoinImage
+                key={j}
+                coin={c}
+                loading="lazy"
+                className="h-20 w-20 shrink-0 grayscale-[35%] sm:h-32 sm:w-32"
+              />
             ))}
           </div>
         ))}

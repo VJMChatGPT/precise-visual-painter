@@ -1,6 +1,6 @@
 import type { Coin } from "./coins";
 
-const shuffle = <T,>(a: T[]) => {
+const shuffle = <T>(a: T[]) => {
   const b = [...a];
   for (let i = b.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

@@ -3,14 +3,20 @@ import { cn } from "@/lib/utils";
 
 function Arrow({ up, className }: { up?: boolean; className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden className={cn("inline-block h-[0.7em] w-[0.7em]", className)} fill="currentColor">
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden
+      className={cn("inline-block h-[0.7em] w-[0.7em]", className)}
+      fill="currentColor"
+    >
       {up ? <path d="M12 2 22 14h-6v8H8v-8H2z" /> : <path d="M12 22 2 10h6V2h8v8h6z" />}
     </svg>
   );
 }
 
 export function Logo({ className, size = "lg" }: { className?: string; size?: "lg" | "sm" }) {
-  if (brand.logoUrl) return <img src={brand.logoUrl} alt={brand.gameName} className={cn("h-24", className)} />;
+  if (brand.logoUrl)
+    return <img src={brand.logoUrl} alt={brand.gameName} className={cn("h-24", className)} />;
   return (
     <h1
       aria-label={brand.gameName}

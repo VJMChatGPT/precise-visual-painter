@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { brand } from "@/config/brand";
 
 function NotFoundComponent() {
   return (
@@ -78,6 +79,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: `${brand.gameName} | Memecoin Higher or Lower` },
+      { name: "description", content: brand.description },
+      { name: "theme-color", content: "#18231c" },
+      { property: "og:title", content: brand.gameName },
+      { property: "og:description", content: brand.description },
+      { property: "og:site_name", content: brand.gameName },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: brand.siteUrl },
+      { property: "og:image", content: `${brand.siteUrl}${brand.shareImage}` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: `${brand.gameName} - Guess the peak market cap. Home of ${brand.token.ticker}.`,
+      },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: brand.gameName },
+      { name: "twitter:description", content: brand.description },
+      { name: "twitter:image", content: `${brand.siteUrl}${brand.shareImage}` },
+      {
+        name: "twitter:image:alt",
+        content: `${brand.gameName} - Guess the peak market cap. Home of ${brand.token.ticker}.`,
+      },
     ],
     links: [
       {
@@ -85,8 +109,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Outfit:wght@400;600;700&display=swap" },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Outfit:wght@400;600;700&display=swap",
+      },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "alternate icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "canonical", href: brand.siteUrl },
     ],
   }),
   shellComponent: RootShell,
