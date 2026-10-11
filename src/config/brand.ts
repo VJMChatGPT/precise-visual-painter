@@ -1,8 +1,9 @@
 // Central branding config. Fill these in when the real token launches.
 // Empty strings hide the related UI (no fake buy buttons).
 export const brand = {
-  gameName: "MemeCap",
-  tagline: "Which memecoin reached the higher peak market cap?",
+  gameName: "PEAK OR JEET?",
+  subtitle: "How well do you know the trenches?",
+  tagline: "Guess the peak market cap. Don't get rekt.",
   token: {
     name: "",
     ticker: "",
