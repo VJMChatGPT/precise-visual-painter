@@ -13,10 +13,10 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "MemeCap — Memecoin Higher or Lower" },
-      { name: "description", content: "Guess which memecoin reached the higher peak market cap. Classic and Beat the Clock modes." },
-      { property: "og:title", content: "MemeCap — Memecoin Higher or Lower" },
-      { property: "og:description", content: "Which memecoin reached the higher peak market cap? Test your degen instincts." },
+      { title: "PEAK OR JEET? | Memecoin Higher or Lower" },
+      { name: "description", content: "Guess the peak market cap. Don't get rekt. How well do you know the trenches?" },
+      { property: "og:title", content: "PEAK OR JEET? | Memecoin Higher or Lower" },
+      { property: "og:description", content: "How well do you know the trenches? Guess which memecoin hit the higher peak market cap." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

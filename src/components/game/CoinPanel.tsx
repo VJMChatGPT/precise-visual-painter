@@ -59,15 +59,15 @@ export function CoinPanel({ coin, side, revealed, disabled, result, onGuess, ver
         <BookOpen className="h-3.5 w-3.5" /> The Story
       </button>
 
-      <CoinImage coin={coin} className="h-16 w-16 text-2xl shadow-2xl sm:h-32 sm:w-32 sm:text-4xl" />
-      <h2 className="mt-2 font-display text-2xl font-extrabold leading-tight sm:mt-4 sm:text-4xl">"{coin.name}"</h2>
-      <p className="text-sm font-semibold tracking-widest text-muted-foreground">${coin.symbol}</p>
+      <CoinImage coin={coin} className="h-20 w-20 text-2xl shadow-2xl sm:h-40 sm:w-40 sm:text-4xl" />
+      <h2 className="mt-2 font-display text-2xl font-extrabold leading-tight sm:mt-4 sm:text-5xl">"{coin.name}"</h2>
+      <p className="text-xs font-semibold tracking-widest text-muted-foreground sm:text-sm">${coin.symbol}</p>
       <p className="mt-1 text-xs text-muted-foreground sm:mt-3 sm:text-sm">
         {side === "known" ? "reached an approx. peak market cap of" : "reached a"}
       </p>
 
       {showValue ? (
-        <p className={cn("font-display text-4xl font-extrabold text-highlight glow-highlight sm:text-6xl", revealed && "animate-pop")}>
+        <p className={cn("font-display text-4xl font-extrabold tabular-nums text-highlight sm:text-7xl", revealed && "animate-pop")}>
           {revealed ? <CountUp to={coin.cap} /> : formatCap(coin.cap)}
         </p>
       ) : (
